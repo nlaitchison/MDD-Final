@@ -23,7 +23,15 @@ html,body,div,form,fieldset,legend,label,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,figure,
 }
 
 body{
-	font: 14px Helvetica; 
+	font: 14px Helvetica;
+	font-weight: lighter;
+	color: #626262;
+	background-color: #f7f7f7;
+	letter-spacing: 1px;
+}
+
+a{
+	text-decoration: none;
 }
 
 ul{
@@ -36,5 +44,78 @@ li{
 
 .clear_fix{
 	clear: both;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------
+		∆ Header
+---------------------------------------------------------------------------------------------------*/
+
+
+#main_header{
+	padding: 10px 0;
+	background-color: #e5e5e5;
+}
+
+#logo{
+	height: 86px;
+	width: 100px;
+	float: left;
+}
+
+h1{
+	height: 100%;
+	width: 100%;
+	text-indent: -9999px;
+	background: url(../images/logo.png) top center no-repeat;
+}
+
+#menu{
+	display: none;
+	height: 65px;
+	width: 50px;
+	float: right;
+}
+
+nav{
+	background-color: #e5e5e5;
+}
+
+nav li{
+	float: none;
+	text-align: right;
+}
+
+nav li.container{
+	padding: 14px 0 12px;
+	font-size: 16px;
+}
+
+nav li a{
+	color: #5a5a5a;
+}
+
+nav li.divider{
+	height: 8px;
+	background-color: #f7f7f7;
+}
+
+nav li.user.container, nav li a:hover{
+	color: #2a248e;
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------
+		∆ Media Queries
+---------------------------------------------------------------------------------------------------*/
+
+
+@media only screen and (max-width: 767px) {
+
+	#logo{ height: 65px; width: 76px; }
+	h1{ background: url(../images/logo-small.png) top center no-repeat; }
+
+	#menu{ display: block; }
 }
 
