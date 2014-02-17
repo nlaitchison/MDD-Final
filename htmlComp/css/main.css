@@ -30,16 +30,18 @@ body{
 	letter-spacing: 1px;
 }
 
+h3{
+	font-size: 16px;
+	font-weight: lighter;
+	text-transform: uppercase;
+}
+
 a{
 	text-decoration: none;
 }
 
 ul{
 	list-style-type: none;
-}
-
-li{
-	float: left;
 }
 
 .clear_fix{
@@ -58,7 +60,7 @@ input{
 	padding: 10px;
 }
 
-input, nav li.user.container, nav li a:hover{
+h3, input, nav li.user.container, nav li a:hover{
 	color: #2a248e;
 }
 
@@ -125,6 +127,55 @@ input[type=search]{
 	background: url(../images/search-icon.png) 97% 60% no-repeat;
 }
 
+#search_results{
+	margin-top: 20px;
+}
+
+.result{
+	border-top: 1px solid #e8e8e8;
+	padding: 12px;
+}
+
+.user_img{
+	width: 24%;
+}
+
+.user_img img{
+	width: 100%;
+}
+
+.user_info{
+	margin-left: 4%;
+	width: 64%;
+}
+
+.user_info ul li{
+	line-height: 25px;
+}
+
+.info_label{
+	color: #05959a;
+}
+
+.social_icons{
+	margin-top: 10px;
+}
+
+.social_icons li{
+	padding-right: 9px;
+}
+
+.heart{
+	width: 8%;
+	opacity: .3;
+	text-align: right;
+	padding-top: 4px;
+}
+
+.user_img, .user_info, ul.social_icons li, .heart{
+	float: left;
+}
+
 /* ---------------------------------------------------------------------------------------------------
 		∆ Media Queries
 ---------------------------------------------------------------------------------------------------*/
@@ -138,6 +189,9 @@ input[type=search]{
 
 	form#search{ width: 100%; }
 	input[type=search]{ font-size: 16px; width: 95%; }
+
+	.heart img{ width: 100%; }
+}
 
 }
 
