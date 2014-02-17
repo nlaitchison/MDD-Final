@@ -46,6 +46,22 @@ li{
 	clear: both;
 }
 
+#main_content{
+	margin-top: 15px;
+}
+
+input{
+	background-color: #f4f4f4;
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	font-size: 14px;
+	padding: 10px;
+}
+
+input, nav li.user.container, nav li a:hover{
+	color: #2a248e;
+}
+
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Header
@@ -100,11 +116,14 @@ nav li.divider{
 	background-color: #f7f7f7;
 }
 
-nav li.user.container, nav li a:hover{
-	color: #2a248e;
+
+/* ---------------------------------------------------------------------------------------------------
+		∆ Search
+---------------------------------------------------------------------------------------------------*/
+
+input[type=search]{
+	background: url(../images/search-icon.png) 97% 60% no-repeat;
 }
-
-
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Media Queries
@@ -115,7 +134,10 @@ nav li.user.container, nav li a:hover{
 
 	#logo{ height: 65px; width: 76px; }
 	h1{ background: url(../images/logo-small.png) top center no-repeat; }
-
 	#menu{ display: block; }
+
+	form#search{ width: 100%; }
+	input[type=search]{ font-size: 16px; width: 95%; }
+
 }
 
