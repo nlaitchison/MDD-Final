@@ -23,7 +23,7 @@ html,body,div,form,fieldset,legend,label,h1,h2,h3,h4,h5,h6,p,ul,dl,dt,dd,figure,
 }
 
 body{
-	font: 14px Helvetica;
+	font: 12px Helvetica;
 	font-weight: lighter;
 	color: #626262;
 	background-color: #f7f7f7;
@@ -31,7 +31,7 @@ body{
 }
 
 h3{
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: lighter;
 	text-transform: uppercase;
 }
@@ -56,7 +56,7 @@ input{
 	background-color: #f4f4f4;
 	border: 1px solid #bbbbbb;
 	border-radius: 2px;
-	font-size: 14px;
+	font-size: 12px;
 	padding: 10px;
 }
 
@@ -106,7 +106,7 @@ nav li{
 
 nav li.container{
 	padding: 14px 0 12px;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 nav li a{
@@ -188,7 +188,7 @@ input[type=search]{
 	#menu{ display: block; }
 
 	form#search{ width: 100%; }
-	input[type=search]{ font-size: 16px; width: 95%; }
+	input[type=search]{ font-size: 12px; width: 95%; }
 
 	.heart img{ width: 100%; }
 }
