@@ -60,7 +60,7 @@ ul{
 	margin-top: 15px;
 }
 
-input{
+input, button{
 	background-color: #f4f4f4;
 	border: 1px solid #bbbbbb;
 	border-radius: 2px;
@@ -249,6 +249,7 @@ ul.more li.divide_info{
 
 #edit_form{
 	border-top: 1px solid #e8e8e8;
+	margin-bottom: 30px;
 }
 
 
@@ -280,6 +281,28 @@ ul.more li.divide_info{
 	width: 300px;
 }
 
+#edit_form fieldset.buttons{
+	border-bottom: none;
+	padding: 15px 0 0;
+}
+
+fieldset.buttons button{
+	padding: 5px;
+	margin-right: 10px;
+}
+
+button.save_profile{
+	color: #2a248e;
+}
+
+button.cancel{
+	color: #626262;
+}
+
+button.save_profile:hover, button.cancel:hover{
+	opacity: .5;
+}
+
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Media Queries
@@ -303,6 +326,14 @@ ul.more li.divide_info{
 	.form_input{ margin: 8px 0; }
 	.form_input label{ float: none; text-align: left;}
 	.form_input input{ float: none; width: 96%; padding: 10px 2%; margin-bottom: 0;}
+
+	#edit_form button{
+		width: 47%;
+		padding: 10px 0;
+		margin-right: 0;
+	}
+
+	#edit_form button.save_profile{ margin-right: 4%;}
 }
 
 }
