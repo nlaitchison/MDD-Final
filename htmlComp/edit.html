@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Searching | Bandmate</title>
+		<meta charset="utf-8" />
+		<meta content="width=device-width" name="viewport">
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<header>
+				<div id="main_header">
+					<div class="container">
+						<div id="logo">
+							<a href="#"><h1>Bandmate</h1></a>
+						</div>
+						<div id="menu">
+							<a href="studio.html"><img src="images/menu-btn.png" alt="Menu"></a>
+						</div>
+						<form id="search_desktop" class="seven columns">
+							<input type="search" placeholder="Search for skill(s)...  ex. guitar, vocals" name="search">
+						</form>
+					</div>
+				</div> <!-- end main_header -->
+				<nav>
+					<ul id="mobile">
+						<li class="divider"></li>
+						<li class="user container"> Hello, Nicole Aitchison </li>
+						<li class="divider"></li>
+						<li class="container"><a href="edit.html">EDIT PROFILE</a></li>
+						<li class="divider"></li>
+						<li class="container"><a href="studio.html">YOUR STUDIO</a></li>
+						<li class="divider"></li>
+						<li class="container"><a href="index.html">LOGOUT</a></li>
+						<li class="divider"></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div id="main_content" class="container">
+
+				<aside id="sidebar_nav" class="one-third column">
+					<div id="account_info">
+						<div class="account_img">
+							<img src="images/users/nicole.png"></a>
+						</div>
+						<h3>Nicole Aitchison</h3>
+						<div class="clear_fix"></div>
+					</div>
+					<ul>
+						<li class="divider"></li>
+						<li><a href="#">EDIT PROFILE</a></li>
+						<li class="divider"></li>
+						<li><a href="#">YOUR STUDIO</a></li>
+						<li class="divider"></li>
+						<li><a href="#">LOGOUT</a></li>
+						<li class="divider"></li>
+					</ul>
+				</aside>
+
+				<form id="search_mobile">
+					<input type="search" placeholder="Search for a skill..." name="search">
+				</form>
+
+				<section id="edit" class="two-thirds column">
+					<h2> Edit Profile </h2>
+					<form id="edit_form">
+						<fieldset>
+							<div class="form_input">
+								<label for="name">Name</label>
+								<input id="name" type="text" required="required" autofocus="autofocus" name="name" placeholder="Name">
+							</div>
+							<div class="form_input">
+								<label for="age">Age</label>
+								<input id="age" type="number" required="required" autofocus="autofocus" name="age" placeholder="Age ex. 22">
+							</div>
+							<div class="form_input">
+								<label for="location">Location</label>
+								<input id="location" type="text" required="required" autofocus="autofocus" name="location" placeholder="City, State">
+							</div>
+							<div class="form_input">
+								<label for="email">Email</label>
+								<input id="email" type="text" required="required" autofocus="autofocus" name="email" placeholder="example@domain.com">
+							</div>
+							<div class="form_input">
+								<label for="phone">Phone</label>
+								<input id="phone" type="number" required="required" autofocus="autofocus" name="phone" placeholder="1234567890">
+							</div>
+						</fieldset>
+						<fieldset>
+							<div class="form_input">
+								<label for="skills">Skills</label>
+								<input id="skills" type="text" required="required" autofocus="autofocus" name="skills" placeholder="ex. guitar, vocals, piano">
+							</div>
+							<div class="form_input">
+								<label for="genres">Genres</label>
+								<input id="genres" type="text" required="required" autofocus="autofocus" name="genres" placeholder="ex. indie, alternative">
+							</div>
+						</fieldset>
+						<fieldset>
+							<div class="form_input">
+								<label for="facebook">facebook.com/</label>
+								<input id="facebook" type="text" autofocus="autofocus" name="facebook" placeholder="example123">
+							</div>
+							<div class="form_input">
+								<label for="twitter">twitter.com/</label>
+								<input id="twitter" type="text" autofocus="autofocus" name="twitter" placeholder="example123">
+							</div>
+							<div class="form_input">
+								<label for="soundcloud">soundcloud.com/</label>
+								<input id="soundcloud" type="text" autofocus="autofocus" name="soundcloud" placeholder="example123">
+							</div>
+							<div class="form_input">
+								<label for="youtube">YouTube</label>
+								<input id="youtube" type="text" autofocus="autofocus" name="youtube" placeholder="ex. http://www.youtube.com/channel/example123">
+							</div>
+						</fieldset>
+						<fieldset class="buttons">
+							<input type="submit" class="save_profile" value="Save Profile">
+							<input type="submit" class="cancel" value="Cancel">
+						</fieldset>
+					</form>
+				</section> <!-- end edit -->
+
+			</div> <!-- main content -->
+
+		</div> <!-- end wrapper -->
+
+		<!-- Javascript -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>
