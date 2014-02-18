@@ -405,6 +405,7 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 
 	header#bg .container{ margin-top: 50px; }
 	header#bg .container p{ margin: 15px 0; font-size: 18px; }
+	header#bg .twitter_login p, header#bg .github_login p{font-size: 14px; 	float: left; margin: 0 0 0 12px; line-height: 28px; }
 
 }
 
