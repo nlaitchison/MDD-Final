@@ -30,10 +30,18 @@ body{
 	letter-spacing: 1px;
 }
 
-h3{
-	font-size: 14px;
+h2, h3{
 	font-weight: lighter;
 	text-transform: uppercase;
+}
+
+h2{
+	font-size: 16px;
+	margin: 12px 0;
+}
+
+h3{
+	font-size: 14px;
 }
 
 a{
@@ -163,6 +171,12 @@ nav li.divider, #sidebar_nav li.divider{
 		∆ Search
 ---------------------------------------------------------------------------------------------------*/
 
+
+#search_mobile{
+	border-bottom: 1px solid #e8e8e8;
+	padding: 0 0 20px;
+}
+
 #search_mobile input[type=search]{
 	background: url(../images/search-icon.png) 97% 60% no-repeat;
 	padding: 10px;
@@ -241,6 +255,8 @@ ul.more li.divide_info{
 
 	form#search{ width: 100%; }
 	input[type=search]{ font-size: 12px; width: 95%; }
+
+	 #search_results{ margin-top:  5px;}
 
 	.heart img{ width: 100%; }
 }
