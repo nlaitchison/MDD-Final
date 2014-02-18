@@ -68,136 +68,61 @@
 					<input type="search" placeholder="Search for a skill..." name="search">
 				</form>
 
-				<section id="search_results" class="two-thirds column">
-
-					<h2> Your Studio </h2>
-
-					<article class="result">
-						<div class="user_img">
-							<img src="images/users/rou.png">
-						</div>
-						<div class="user_info">
-							<ul class=" less">
-								<li><h3>Rou Reynolds</h3></li>
-								<li><span class="info_label">A:</span> 22 years old</li>
-								<li><span class="info_label">L:</span> Orlando, Florida</li>
-								<li><span class="info_label">E:</span> rreynolds@gmail.com</li>
-							</ul>
-							<!-- <ul class="more">
-								<li><span class="info_label">S:</span> Vocals, Guitar, Keyboard</li>
-								<li><span class="info_label">G:</span> Post-Hardcore, Electronic, Alternative </li>
-								<li><span class="info_label">P:</span> (123)456-7890 </li>
-								<li>
-									<ul class="social_icons">
-										<li><a href="#"><img src="images/facebook-icon.png"></a></li>
-										<li><a href="#"><img src="images/twitter-icon.png"></a></li>
-										<li><a href="#"><img src="images/youtube-icon.png"></a></li>
-										<li><a href="#"><img src="images/soundcloud-icon.png"></a></li>
-									</ul>
-								</li>
-							</ul> -->
-						</div>
-						<div class="heart">
-							<img src="images/heart-btn.png">
-						</div>
-						<div class="clear_fix"></div>
-					</article> <!-- end ressult -->
-
-					<article class="result">
-						<div class="user_img">
-							<img src="images/users/jason.png">
-						</div>
-						<div class="user_info">
-							<ul class=" less">
-								<li><h3>Jason Butler</h3></li>
-								<li><span class="info_label">A:</span> 22 years old</li>
-								<li><span class="info_label">L:</span> Orlando, Florida</li>
-								<li><span class="info_label">E:</span> rreynolds@gmail.com</li>
-							</ul>
-							<ul class="more">
-								<li><span class="info_label">P:</span> (123)456-7890 </li>
-								<li class="divide_info"><span class="info_label">S:</span> Vocals, Guitar, Keyboard</li>
-								<li><span class="info_label">G:</span> Post-Hardcore, Electronic, Alternative </li>
-
-								<li>
-									<ul class="social_icons">
-										<li><a href="#"><img src="images/facebook-icon.png" alt="facebook"></a></li>
-										<li><a href="#"><img src="images/twitter-icon.png" alt="twitter"></a></li>
-										<li><a href="#"><img src="images/youtube-icon.png" alt="youtube"></a></li>
-										<li><a href="#"><img src="images/soundcloud-icon.png" alt="soundcloud"></a></li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div class="heart">
-							<img src="images/heart-btn.png">
-						</div>
-						<div class="clear_fix"></div>
-					</article> <!-- end ressult -->
-
-					<article class="result">
-						<div class="user_img">
-							<img src="images/users/hailer.png">
-						</div>
-						<div class="user_info">
-							<ul class=" less">
-								<li><h3>Hailey Williams</h3></li>
-								<li><span class="info_label">A:</span> 22 years old</li>
-								<li><span class="info_label">L:</span> Orlando, Florida</li>
-								<li><span class="info_label">E:</span> rreynolds@gmail.com</li>
-							</ul>
-							<!-- <ul class="more">
-								<li><span class="info_label">S:</span> Vocals, Guitar, Keyboard</li>
-								<li><span class="info_label">G:</span> Post-Hardcore, Electronic, Alternative </li>
-								<li><span class="info_label">P:</span> (123)456-7890 </li>
-								<li>
-									<ul class="social_icons">
-										<li><a href="#"><img src="images/facebook-icon.png"></a></li>
-										<li><a href="#"><img src="images/twitter-icon.png"></a></li>
-										<li><a href="#"><img src="images/youtube-icon.png"></a></li>
-										<li><a href="#"><img src="images/soundcloud-icon.png"></a></li>
-									</ul>
-								</li>
-							</ul> -->
-						</div>
-						<div class="heart">
-							<img src="images/heart-btn.png">
-						</div>
-						<div class="clear_fix"></div>
-					</article> <!-- end ressult -->
-
-					<article class="result">
-						<div class="user_img">
-							<img src="images/users/craig.png">
-						</div>
-						<div class="user_info">
-							<ul class=" less">
-								<li><h3>Craig Owens</h3></li>
-								<li><span class="info_label">A:</span> 22 years old</li>
-								<li><span class="info_label">L:</span> Orlando, Florida</li>
-								<li><span class="info_label">E:</span> rreynolds@gmail.com</li>
-							</ul>
-							<!-- <ul class="more">
-								<li><span class="info_label">S:</span> Vocals, Guitar, Keyboard</li>
-								<li><span class="info_label">G:</span> Post-Hardcore, Electronic, Alternative </li>
-								<li><span class="info_label">P:</span> (123)456-7890 </li>
-								<li>
-									<ul class="social_icons">
-										<li><a href="#"><img src="images/facebook-icon.png"></a></li>
-										<li><a href="#"><img src="images/twitter-icon.png"></a></li>
-										<li><a href="#"><img src="images/youtube-icon.png"></a></li>
-										<li><a href="#"><img src="images/soundcloud-icon.png"></a></li>
-									</ul>
-								</li>
-							</ul> -->
-						</div>
-						<div class="heart">
-							<img src="images/heart-btn.png">
-						</div>
-						<div class="clear_fix"></div>
-					</article> <!-- end ressult -->
-
-				</section>
+				<section id="edit" class="two-thirds column">
+					<h2> Edit Profile </h2>
+					<form id="edit_form">
+						<fieldset>
+							<div class="form_input">
+								<label for="name">Name</label>
+								<input id="name" type="text" required="required" autofocus="autofocus" name="name" placeholder="Name">
+							</div>
+							<div class="form_input">
+								<label for="age">Age</label>
+								<input id="age" type="text" required="required" autofocus="autofocus" name="age" placeholder="Age">
+							</div>
+							<div class="form_input">
+								<label for="location">Location</label>
+								<input id="location" type="text" required="required" autofocus="autofocus" name="location" placeholder="City, State">
+							</div>
+							<div class="form_input">
+								<label for="email">Email</label>
+								<input id="email" type="text" required="required" autofocus="autofocus" name="email" placeholder="example@domain.com">
+							</div>
+							<div class="form_input">
+								<label for="phone">Phone</label>
+								<input id="phone" type="text" required="required" autofocus="autofocus" name="phone" placeholder="1234567890">
+							</div>
+						</fieldset>
+						<fieldset>
+							<div class="form_input">
+								<label for="skills">Skills</label>
+								<input id="skills" type="text" required="required" autofocus="autofocus" name="skills" placeholder="ex. guitar, vocals, piano">
+							</div>
+							<div class="form_input">
+								<label for="genres">Genres</label>
+								<input id="genres" type="text" required="required" autofocus="autofocus" name="genres" placeholder="ex. indie, alternative">
+							</div>
+						</fieldset>
+						<fieldset>
+							<div class="form_input">
+								<label for="facebook">facebook.com/</label>
+								<input id="facebook" type="text" autofocus="autofocus" name="facebook" placeholder="example123">
+							</div>
+							<div class="form_input">
+								<label for="twitter">twitter.com/</label>
+								<input id="twitter" type="text" autofocus="autofocus" name="twitter" placeholder="example123">
+							</div>
+							<div class="form_input">
+								<label for="soundcloud">soundcloud.com/</label>
+								<input id="soundcloud" type="text" autofocus="autofocus" name="soundcloud" placeholder="example123">
+							</div>
+							<div class="form_input">
+								<label for="youtube">YouTube</label>
+								<input id="youtube" type="text" autofocus="autofocus" name="youtube" placeholder="ex. http://www.youtube.com/channel/example123">
+							</div>
+						</fieldset>
+					</form>
+				</section> <!-- end edit -->
 
 			</div> <!-- main content -->
 

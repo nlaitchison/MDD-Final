@@ -67,10 +67,17 @@ input{
 	font-size: 12px;
 }
 
+fieldset{
+	border: none;
+}
+
 h3, input, nav li.user.container, nav li a:hover, #sidebar_nav li a:hover{
 	color: #2a248e;
 }
 
+#sidebar_nav, #results, #edit{
+	margin-top: 20px;
+}
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Header
@@ -182,10 +189,6 @@ nav li.divider, #sidebar_nav li.divider{
 	padding: 10px;
 }
 
-#sidebar_nav, #search_results{
-	margin-top: 20px;
-}
-
 .result{
 	padding: 12px;
 }
@@ -241,24 +244,58 @@ ul.more li.divide_info{
 }
 
 /* ---------------------------------------------------------------------------------------------------
+		∆ Edit
+---------------------------------------------------------------------------------------------------*/
+
+#edit_form fieldset{
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 0;
+}
+
+.form_input{
+	margin: 10px 0;
+	clear: both;
+}
+
+.form_input label{
+    display: block;
+    float: left;
+    line-height: 26px;
+    padding-right: 10px;
+    text-align: right;
+    width: 110px;
+    color: #05959a;
+}
+
+.form_input input{
+	padding: 5px;
+	float: left;
+	margin-bottom: 10px;
+	color: #626262;
+	width: 300px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------
 		∆ Media Queries
 ---------------------------------------------------------------------------------------------------*/
 
 
 @media only screen and (max-width: 767px) {
 
+	form#search, .heart img, .form_input label{ width: 100%; }
 	#sidebar_nav, #search_desktop{ display: none;}
 
 	#logo{ height: 50px; width: 58px; }
 	h1{ background: url(../images/logo-small.png) top center no-repeat; }
 	#menu, nav ul#mobile, #search_mobile{ display: block; }
 
-	form#search{ width: 100%; }
 	input[type=search]{ font-size: 12px; width: 95%; }
 
-	 #search_results{ margin-top:  3px;}
+	 #results{ margin-top:  3px;}
 
-	.heart img{ width: 100%; }
+	.form_input label{ float: none; text-align: left;}
+	.form_input input{ width: 96%; padding: 10px 2%;}
 }
 
 }
