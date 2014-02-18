@@ -247,6 +247,11 @@ ul.more li.divide_info{
 		∆ Edit
 ---------------------------------------------------------------------------------------------------*/
 
+#edit_form{
+	border-top: 1px solid #e8e8e8;
+}
+
+
 #edit_form fieldset{
 	border-bottom: 1px solid #e8e8e8;
 	padding: 10px 0;
@@ -292,10 +297,12 @@ ul.more li.divide_info{
 
 	input[type=search]{ font-size: 12px; width: 95%; }
 
-	 #results{ margin-top:  3px;}
+	#results, #edit{ margin-top:  3px;}
 
+	#edit_form fieldset{ padding: 5px 0 15px; }
+	.form_input{ margin: 8px 0; }
 	.form_input label{ float: none; text-align: left;}
-	.form_input input{ width: 96%; padding: 10px 2%;}
+	.form_input input{ float: none; width: 96%; padding: 10px 2%; margin-bottom: 0;}
 }
 
 }
