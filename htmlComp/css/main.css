@@ -286,20 +286,20 @@ ul.more li.divide_info{
 	padding: 15px 0 0;
 }
 
-fieldset.buttons button{
+fieldset.buttons input[type=submit]{
 	padding: 5px;
 	margin-right: 10px;
 }
 
-button.save_profile{
+input[type=submit].save_profile{
 	color: #2a248e;
 }
 
-button.cancel{
+input[type=submit].cancel{
 	color: #626262;
 }
 
-button.save_profile:hover, button.cancel:hover{
+input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 	opacity: .5;
 }
 
@@ -327,13 +327,13 @@ button.save_profile:hover, button.cancel:hover{
 	.form_input label{ float: none; text-align: left;}
 	.form_input input{ float: none; width: 96%; padding: 10px 2%; margin-bottom: 0;}
 
-	#edit_form button{
+	#edit_form input[type=submit]{
 		width: 47%;
 		padding: 10px 0;
 		margin-right: 0;
 	}
 
-	#edit_form button.save_profile{ margin-right: 4%;}
+	#edit_form input[type=submit].save_profile{ margin-right: 4%;}
 }
 
 }
