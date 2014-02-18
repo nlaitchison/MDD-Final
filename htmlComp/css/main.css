@@ -404,6 +404,7 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
 	#main_header{ padding: 10px 15px;}
+	#search_desktop input[type="search"]{ margin-right: 15px;}
 
 	header#bg .container{ margin-top: 50px; width: 700px;}
 	header#bg .container p{ margin: 15px 0; font-size: 18px; }
