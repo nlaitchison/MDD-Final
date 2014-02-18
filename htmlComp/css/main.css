@@ -79,6 +79,11 @@ h3, input, nav li.user.container, nav li a:hover, #sidebar_nav li a:hover{
 	margin-top: 20px;
 }
 
+
+/* ---------------------------------------------------------------------------------------------------
+		∆ Landing
+---------------------------------------------------------------------------------------------------*/
+
 #bg{
 	background-attachment: fixed;
     background-image: url("../images/landing-bg.jpg");
@@ -87,15 +92,10 @@ h3, input, nav li.user.container, nav li a:hover, #sidebar_nav li a:hover{
     background-size: cover;
     min-height: 100%;
     min-width: 100%;
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: -1;
 }
-
-/* ---------------------------------------------------------------------------------------------------
-		∆ Landing
----------------------------------------------------------------------------------------------------*/
-
 
 header#bg .container{
 	margin: 100px auto 50px;
