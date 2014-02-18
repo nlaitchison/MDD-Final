@@ -57,7 +57,6 @@ input{
 	border: 1px solid #bbbbbb;
 	border-radius: 2px;
 	font-size: 12px;
-	padding: 10px;
 }
 
 h3, input, nav li.user.container, nav li a:hover, #sidebar_nav li a:hover{
@@ -86,6 +85,19 @@ h1{
 	width: 100%;
 	text-indent: -9999px;
 	background: url(../images/logo.png) top center no-repeat;
+}
+
+#search_desktop{
+	float: right;
+	margin: 22px 0 0;
+}
+
+#search_desktop input[type=search]{
+	background: url(../images/search-icon-small.png) 97% 60% no-repeat;
+	padding: 5px;
+	background-color: #f6f6f6;
+	float: right;
+	width: 100%
 }
 
 #menu{
@@ -151,8 +163,9 @@ nav li.divider, #sidebar_nav li.divider{
 		∆ Search
 ---------------------------------------------------------------------------------------------------*/
 
-input[type=search]{
+#search_mobile input[type=search]{
 	background: url(../images/search-icon.png) 97% 60% no-repeat;
+	padding: 10px;
 }
 
 #sidebar_nav, #search_results{
@@ -220,7 +233,7 @@ ul.more li.divide_info{
 
 @media only screen and (max-width: 767px) {
 
-	#sidebar_nav{ display: none;}
+	#sidebar_nav, #search_desktop{ display: none;}
 
 	#logo{ height: 50px; width: 58px; }
 	h1{ background: url(../images/logo-small.png) top center no-repeat; }
