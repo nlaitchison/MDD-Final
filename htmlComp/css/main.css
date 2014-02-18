@@ -403,7 +403,7 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
-	header#bg .container{ margin-top: 50px; }
+	header#bg .container{ margin-top: 50px; width: 700px;}
 	header#bg .container p{ margin: 15px 0; font-size: 18px; }
 	header#bg .twitter_login p, header#bg .github_login p{font-size: 14px; 	float: left; margin: 0 0 0 12px; line-height: 28px; }
 
@@ -435,7 +435,6 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 
 	#edit_form input[type=submit].save_profile{ margin-right: 4%;}
 
-	header#bg{position: absolute; }
 	header#bg .container{ margin-top: 50px; }
 	header#bg .container p{ margin: 15px 0; font-size: 18px; }
 	header#bg .twitter_login p, header#bg .github_login p{font-size: 14px; 	float: left; margin: 0 0 0 12px; line-height: 28px; }
