@@ -256,7 +256,7 @@ ul.more li.divide_info{
 	form#search{ width: 100%; }
 	input[type=search]{ font-size: 12px; width: 95%; }
 
-	 #search_results{ margin-top:  5px;}
+	 #search_results{ margin-top:  3px;}
 
 	.heart img{ width: 100%; }
 }
