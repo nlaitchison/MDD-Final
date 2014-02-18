@@ -60,7 +60,7 @@ input{
 	padding: 10px;
 }
 
-h3, input, nav li.user.container, nav li a:hover{
+h3, input, nav li.user.container, nav li a:hover, #sidebar_nav li a:hover{
 	color: #2a248e;
 }
 
@@ -76,8 +76,8 @@ h3, input, nav li.user.container, nav li a:hover{
 }
 
 #logo{
-	height: 86px;
-	width: 100px;
+	height: 56px;
+	width: 65px;
 	float: left;
 }
 
@@ -89,14 +89,17 @@ h1{
 }
 
 #menu{
-	display: none;
 	height: 50px;
-	width: 40px;
+	width: 35px;
 	float: right;
 }
 
-nav{
+nav, #account_info, #sidebar_nav li{
 	background-color: #e5e5e5;
+}
+
+#menu, nav ul#mobile, #search_mobile{
+	display: none;
 }
 
 nav li{
@@ -109,13 +112,38 @@ nav li.container{
 	font-size: 14px;
 }
 
-nav li a{
+nav li a, #sidebar_nav li a{
 	color: #5a5a5a;
 }
 
-nav li.divider{
+nav li.divider, #sidebar_nav li.divider{
 	height: 8px;
 	background-color: #f7f7f7;
+	padding: 0;
+}
+
+#sidebar_nav li{
+	padding: 8px;
+	font-size: 12px;
+}
+
+#account_info{
+	padding: 8px 8px 5px;
+}
+
+#account_info h3{
+	line-height: 35px;
+	margin-left: 15px;
+	float: left;
+}
+
+.account_img{
+	width: 15%;
+	float: left;
+}
+
+.account_img img{
+	width: 100%;
 }
 
 
@@ -127,13 +155,16 @@ input[type=search]{
 	background: url(../images/search-icon.png) 97% 60% no-repeat;
 }
 
-#search_results{
+#sidebar_nav, #search_results{
 	margin-top: 20px;
 }
 
 .result{
-	border-top: 1px solid #e8e8e8;
 	padding: 12px;
+}
+
+.result, ul.more li.divide_info, ul.social_icons{
+	border-top: 1px solid #e8e8e8;
 }
 
 .user_img{
@@ -153,12 +184,18 @@ input[type=search]{
 	line-height: 25px;
 }
 
+ul.more li.divide_info{
+	margin-top: 5px;
+	padding-top: 5px;
+}
+
 .info_label{
 	color: #05959a;
 }
 
 .social_icons{
-	margin-top: 10px;
+	margin-top: 5px;
+	padding-top: 10px;
 }
 
 .social_icons li{
@@ -183,9 +220,11 @@ input[type=search]{
 
 @media only screen and (max-width: 767px) {
 
+	#sidebar_nav{ display: none;}
+
 	#logo{ height: 50px; width: 58px; }
 	h1{ background: url(../images/logo-small.png) top center no-repeat; }
-	#menu{ display: block; }
+	#menu, nav ul#mobile, #search_mobile{ display: block; }
 
 	form#search{ width: 100%; }
 	input[type=search]{ font-size: 12px; width: 95%; }
