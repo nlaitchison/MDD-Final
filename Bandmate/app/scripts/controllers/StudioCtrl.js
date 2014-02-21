@@ -8,8 +8,8 @@ App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', function ($sco
 	$scope.users = FireConn;
 
 	// console.log('get current user', $rootScope.loginObject);
-	var loginObjct = $rootScope.loginObject;
-	console.log(loginObjct.user)
+	// var loginObjct = $rootScope.loginObject;
+	// console.log(loginObjct.user)
 
 	// var userId = $rootScope.loginObject.user.provider + $rootScope.loginObject.user.id;
 

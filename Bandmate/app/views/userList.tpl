@@ -2,6 +2,8 @@
 
 	<!-- <button ng-click="saveData()">save</button> -->
 
+	<h2>Your Studio</h2>
+
 	<article class="result" ng-repeat="($id, item) in users">
 		<div class="user_img">
 			<img ng-src="{{item.imgUrl}}">

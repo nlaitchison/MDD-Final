@@ -297,6 +297,7 @@ nav li.divider, #sidebar_nav li.divider{
 
 .user_img img{
 	width: 100%;
+	border-radius: 2px;
 }
 
 .user_info{

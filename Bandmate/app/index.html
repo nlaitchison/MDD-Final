@@ -28,6 +28,10 @@
 
     <div id="wrapper">
 
+      <input type="hidden" id="user_id" value="{{loginObject.user.provider}}{{loginObject.user.id}}">
+
+      <!-- logged out view -->
+
       <header ng-hide="loginObject.user" id="bg">
         <div class='container'>
           <div id="logo">
@@ -36,7 +40,7 @@
           <p>Create a profile.</p>
           <p>Search for and connect with musicians.</p>
           <p>Find perfect bandmates.</p>
-          <a ng-click="loginObject.$login('twitter')">
+          <a ng-click="loginUser()">
             <div class="twitter_login">
               <img src="images/twitter-login-icon.png" alt="Twitter Icon">
               <p> Login with Twitter </p>
@@ -45,6 +49,8 @@
           </a>
         </div>
       </header>
+
+       <!-- logged in -->
 
       <header ng-show="loginObject.user">
         <div id="main_header">
@@ -60,6 +66,9 @@
             </form>
           </div>
         </div> <!-- end main_header -->
+
+        <!-- desktop nav -->
+
         <nav>
           <ul id="mobile">
             <li class="divider"></li>
@@ -77,6 +86,8 @@
 
       <div id="main_content" class="container" ng-show="loginObject.user">
 
+        <!-- desktop nav -->
+
         <aside id="sidebar_nav" class="one-third column">
           <div id="account_info">
             <div class="account_img">
@@ -91,7 +102,7 @@
             <li class="divider"></li>
             <li><a href="#">YOUR STUDIO</a></li>
             <li class="divider"></li>
-            <li><a href="#">LOGOUT</a></li>
+            <li><a ng-click="loginObject.$logout()">LOGOUT</a></li>
             <li class="divider"></li>
           </ul>
         </aside>
