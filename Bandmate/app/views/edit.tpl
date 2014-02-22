@@ -1,6 +1,6 @@
 <section id="edit" class="two-thirds column">
 	<h2> Edit Profile </h2>
-	<form id="edit_form" g-submit="save()">
+	<form id="edit_form" ng-submit="save()">
 		<fieldset>
 			<div class="form_input">
 				<label for="name">Name</label>
@@ -20,17 +20,17 @@
 			</div>
 			<div class="form_input">
 				<label for="phone">Phone</label>
-				<input id="phone" type="number" required="required" autofocus="autofocus" name="phone" placeholder="1234567890" ng-model="user.phone">
+				<input id="phone" type="number" autofocus="autofocus" name="phone" placeholder="1234567890" ng-model="user.phone">
 			</div>
 		</fieldset>
 		<fieldset>
 			<div class="form_input">
 				<label for="skills">Skills</label>
-				<input id="skills" type="text" required="required" autofocus="autofocus" name="skills" placeholder="ex. guitar, vocals, piano" ng-model="user.skills">
+				<input id="skills" type="text" autofocus="autofocus" name="skills" placeholder="ex. guitar, vocals, piano" ng-model="user.skills">
 			</div>
 			<div class="form_input">
 				<label for="genres">Genres</label>
-				<input id="genres" type="text" required="required" autofocus="autofocus" name="genres" placeholder="ex. indie, alternative" ng-model="user.genre">
+				<input id="genres" type="text" autofocus="autofocus" name="genres" placeholder="ex. indie, alternative" ng-model="user.genre">
 			</div>
 		</fieldset>
 		<fieldset>

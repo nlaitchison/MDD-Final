@@ -15,7 +15,7 @@ var App =angular.module('bandmateApp', [
         templateUrl: 'views/userList.tpl',
         controller: 'StudioCtrl'
       })
-      .when('/edit', {
+      .when('/edit/:id', {
         templateUrl: 'views/edit.tpl',
         controller: 'EditCtrl'
       })
@@ -71,15 +71,20 @@ App.run(['$firebaseSimpleLogin', '$rootScope', 'FireConn', function($firebaseSim
 
     for( var i=0; i<allUsers.length; i++){
       if(allUsers[i].id === $rootScope.currentUser.id){
+
         exist = true;
         $rootScope.currentUser === allUsers[i];
+
       }else{
+
         exist = false;
+
       }
     }
 
     if(!exist){
-      FireConn.$add($rootScope.currentUser);
+      // FireConn.$add($rootScope.currentUser);
+      db.child($rootScope.currentUser.id).set($rootScope.currentUser);
     }
 
     console.log(exist);
