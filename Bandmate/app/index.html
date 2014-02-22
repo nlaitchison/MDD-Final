@@ -74,11 +74,11 @@
             <li class="divider"></li>
             <li class="user container"> {{loginObject.user.name}} </li>
             <li class="divider"></li>
-            <li class="container"><a href="edit.html">EDIT PROFILE</a></li>
+            <li class="container"><a href="#/edit">EDIT PROFILE</a></li>
             <li class="divider"></li>
             <li class="container"><a href="studio.html">YOUR STUDIO</a></li>
             <li class="divider"></li>
-            <li class="container"><a ng-click="loginObject.$logout()">LOGOUT</a></li>
+            <li class="container"><a href="#" ng-click="loginObject.$logout()">LOGOUT</a></li>
             <li class="divider"></li>
           </ul>
         </nav>
@@ -98,11 +98,11 @@
           </div>
           <ul>
             <li class="divider"></li>
-            <li><a href="#">EDIT PROFILE</a></li>
+            <li><a href="#/edit">EDIT PROFILE</a></li>
             <li class="divider"></li>
             <li><a href="#">YOUR STUDIO</a></li>
             <li class="divider"></li>
-            <li><a ng-click="loginObject.$logout()">LOGOUT</a></li>
+            <li><a href="#" ng-click="loginObject.$logout()">LOGOUT</a></li>
             <li class="divider"></li>
           </ul>
         </aside>
@@ -146,6 +146,7 @@
         <script src="scripts/controllers/MainCtrl.js"></script>
         <script src="scripts/services/factory.js"></script>
         <script src="scripts/controllers/StudioCtrl.js"></script>
+        <script src="scripts/controllers/EditCtrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>

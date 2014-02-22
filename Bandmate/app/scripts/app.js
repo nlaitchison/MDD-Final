@@ -15,6 +15,10 @@ var App =angular.module('bandmateApp', [
         templateUrl: 'views/userList.tpl',
         controller: 'StudioCtrl'
       })
+      .when('/edit', {
+        templateUrl: 'views/edit.tpl',
+        controller: 'EditCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

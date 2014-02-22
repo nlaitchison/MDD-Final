@@ -5,7 +5,7 @@
 // angular.module('bandmateApp')
 App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', function ($scope, $rootScope, FireConn) {
 
-	$scope.users = FireConn;
+	// $scope.users = FireConn;
 
 	// console.log('get current user', $rootScope.loginObject);
 	// var loginObjct = $rootScope.loginObject;
