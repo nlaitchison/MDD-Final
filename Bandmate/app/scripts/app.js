@@ -15,16 +15,33 @@ App.config(function ($routeProvider) {
       controller: 'LoginCtrl'
     })
     .when('/studio', {
-      templateUrl: 'views/userList.tpl',
+      templateUrl: 'views/studio.tpl',
       controller: 'StudioCtrl'
     })
     .when('/edit/:id', {
       templateUrl: 'views/edit.tpl',
       controller: 'EditCtrl'
     })
+    .when('/search', {
+      templateUrl: 'views/search.tpl',
+      controller: 'SearchCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
+});
+
+App.directive('ngEnter', function() {
+  return function(scope, element, attrs) {
+    element.bind('keydown keypress', function(event) {
+      if(event.which === 13) {
+        scope.$apply(function(){
+          scope.$eval(attrs.ngEnter, {'event': event});
+        });
+        event.preventDefault();
+      }
+    });
+  };
 });
 
 // App.run(['$firebaseSimpleLogin', '$rootScope', 'FireConn', function($firebaseSimpleLogin, $rootScope, FireConn){

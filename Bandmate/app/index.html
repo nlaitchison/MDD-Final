@@ -53,13 +53,13 @@
         <div id="main_header">
           <div class="container">
             <div id="logo">
-              <a href="#/"><h1>Bandmate</h1></a>
+              <a href="#/studio"><h1>Bandmate</h1></a>
             </div>
             <div id="menu">
-              <a href="studio.html"><img src="images/menu-btn.png" alt="Menu"></a>
+              <a href="#/studio"><img src="images/menu-btn.png" alt="Menu"></a>
             </div>
             <form id="search_desktop" class="seven columns">
-              <input type="search" placeholder="Search for skill(s)...  ex. guitar, vocals" name="search">
+              <input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
             </form>
           </div>
         </div> <!-- end main_header -->
@@ -73,9 +73,9 @@
             <li class="divider"></li>
             <li class="container"><a href="#/edit/{{loginObject.user.provider}}{{loginObject.user.id}}">EDIT PROFILE</a></li>
             <li class="divider"></li>
-            <li class="container"><a href="#/">YOUR STUDIO</a></li>
+            <li class="container"><a href="#/studio">YOUR STUDIO</a></li>
             <li class="divider"></li>
-            <li class="container"><a href="#" ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
+            <li class="container"><a ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
             <li class="divider"></li>
           </ul>
         </nav>
@@ -118,6 +118,7 @@
         <script src="scripts/controllers/LogoutCtrl.js"></script>
         <script src="scripts/controllers/StudioCtrl.js"></script>
         <script src="scripts/controllers/EditCtrl.js"></script>
+        <script src="scripts/controllers/SearchCtrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -27,7 +27,6 @@ App.controller('EditCtrl', ['$scope', '$rootScope', 'FireConn', '$firebase', '$r
 			db.update({'email' : $scope.user.email});
 		}
 		if($scope.user.phone !== null){
-			console.log('phone', $scope.user.phone );
 			db.update({'phone' : $scope.user.phone});
 		}
 		if($scope.user.skills !== null){

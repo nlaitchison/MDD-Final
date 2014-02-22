@@ -278,9 +278,10 @@ nav li.divider, #sidebar_nav li.divider{
 	padding: 0 0 20px;
 }
 
-#search_mobile input[type=search]{
+#search_mobile input[type=text]#search{
 	background: url(../images/search-icon.png) 97% 60% no-repeat;
 	padding: 10px;
+	width: 100%;
 }
 
 .result{

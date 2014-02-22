@@ -12,7 +12,7 @@
 	    <li class="divider"></li>
 	    <li><a href="#/edit/{{loginObject.user.provider}}{{loginObject.user.id}}">EDIT PROFILE</a></li>
 	    <li class="divider"></li>
-	    <li><a href="#/">YOUR STUDIO</a></li>
+	    <li><a href="#/studio">YOUR STUDIO</a></li>
 	    <li class="divider"></li>
 	    <li><a ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
 	    <li class="divider"></li>
@@ -20,7 +20,7 @@
 	</aside>
 
 	<form id="search_mobile">
-	  <input type="search" placeholder="Search for a skill..." name="search">
+	  <input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
 	</form>
 
 	<section id="edit" class="two-thirds column">
