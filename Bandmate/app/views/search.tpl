@@ -29,7 +29,7 @@
 
 		<h2>Search Results</h2>
 
-		<article class="result" ng-repeat="item in matches">
+		<article class="result" ng-repeat="item in results">
 			<div class="user_img">
 				<img ng-src="{{item.imgUrl}}">
 			</div>

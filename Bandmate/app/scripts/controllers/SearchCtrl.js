@@ -34,7 +34,6 @@ App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', functi
 
 	        console.log('match');
 	        matches.push(allUsers[i]);
-	        // matches.push(allUsers[i]);
 
 	      }
 	    }
