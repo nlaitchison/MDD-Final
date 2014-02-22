@@ -15,7 +15,13 @@ App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', '$cookies', fu
 	}
 
 	$scope.users = FireConn;
-	console.log($scope.users);
+
+	$scope.addToStudio = function(userId){
+
+		var userStudio = new Firebase('https://bandmate.firebaseio.com/' + $rootScope.currentUser.id + '/studio');
+		userStudio.push(userId);
+		console.log('add', userId);
+	}
 
 	// console.log('get current user', $rootScope.loginObject);
 	// var loginObjct = $rootScope.loginObject;

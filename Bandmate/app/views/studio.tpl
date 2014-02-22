@@ -55,6 +55,7 @@
 					</li>
 				</ul>
 			</div>
+			<!-- <div class="heart" ng-click="myStyle={opacity:'1'}" ng-style="myStyle"> -->
 			<div class="heart">
 				<img src="images/heart-btn.png">
 			</div>
