@@ -2,7 +2,17 @@
 
 /*global App*/
 
-App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', '$rootScope', function ($scope, FireConn, $window, $filter, $rootScope) {
+App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', '$rootScope', '$cookies', function ($scope, FireConn, $window, $filter, $rootScope, $cookies) {
+
+
+	// set current user if it's been undefined
+	if($rootScope.currentUser === undefined){
+		$rootScope.currentUser ={
+		'id': $cookies.id,
+		'name': $cookies.name,
+		'imgUrl': $cookies.imgUrl,
+		};
+	}
 
 	var keywords = '';
 	var matches = [];

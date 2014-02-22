@@ -1,26 +1,27 @@
+<div ng-include src="'views/header.tpl'"></div>
 <div id="main_content" class="container">
 
-	<aside id="sidebar_nav" class="one-third column">
-	  <div id="account_info">
-	    <div class="account_img">
-	      <img src="{{loginObject.user.profile_image_url}}"></a>
-	    </div>
-	    <h3>{{loginObject.user.name}}</h3>
-	    <div class="clear_fix"></div>
+  <aside id="sidebar_nav" class="one-third column">
+	<div id="account_info">
+	  <div class="account_img">
+	    <img src="{{loginObject.user.profile_image_url}}"></a>
 	  </div>
-	  <ul>
-	    <li class="divider"></li>
-	    <li><a href="#/edit/{{loginObject.user.provider}}{{loginObject.user.id}}">EDIT PROFILE</a></li>
-	    <li class="divider"></li>
-	    <li><a href="#/studio">YOUR STUDIO</a></li>
-	    <li class="divider"></li>
-	    <li><a ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
-	    <li class="divider"></li>
-	  </ul>
+	  <h3>{{loginObject.user.name}}</h3>
+	  <div class="clear_fix"></div>
+	</div>
+	<ul>
+	  <li class="divider"></li>
+	  <li><a href="#/edit/{{loginObject.user.provider}}{{loginObject.user.id}}">EDIT PROFILE</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#/studio">YOUR STUDIO</a></li>
+	  <li class="divider"></li>
+	  <li><a ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
+	  <li class="divider"></li>
+	</ul>
 	</aside>
 
 	<form id="search_mobile">
-	  <input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
+	<input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
 	</form>
 
 	<section id="edit" class="two-thirds column">

@@ -2,7 +2,17 @@
 
 /*global App*/
 
-App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', function ($scope, $rootScope, FireConn) {
+App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', '$cookies', function ($scope, $rootScope, FireConn, $cookies) {
+
+
+	// set current user if it's been undefined
+	if($rootScope.currentUser === undefined){
+		$rootScope.currentUser ={
+		'id': $cookies.id,
+		'name': $cookies.name,
+		'imgUrl': $cookies.imgUrl,
+		};
+	}
 
 	$scope.users = FireConn;
 	console.log($scope.users);

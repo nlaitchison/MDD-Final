@@ -3,11 +3,16 @@
 /*global App*/
 /*global Firebase*/
 
-App.controller('EditCtrl', ['$scope', '$rootScope', 'FireConn', '$firebase', '$routeParams', function ($scope, $rootScope, FireConn, $firebase, $routeParams) {
+App.controller('EditCtrl', ['$scope', '$rootScope', 'FireConn', '$firebase', '$routeParams', '$cookies', function ($scope, $rootScope, FireConn, $firebase, $routeParams, $cookies) {
 
-	// $scope.user = $rootScope.currentUser;
-
-	// console.log($rootScope.currentUser);
+	// set current user if it's been undefined
+	if($rootScope.currentUser === undefined){
+		$rootScope.currentUser ={
+		'id': $cookies.id,
+		'name': $cookies.name,
+		'imgUrl': $cookies.imgUrl,
+		};
+	}
 
 	var db = new Firebase('https://bandmate.firebaseio.com/' + $routeParams.id);
 	$scope.user = $firebase(db);

@@ -2,12 +2,7 @@
 
 /*global App*/
 /*global Firebase*/
-App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$window', function($firebaseSimpleLogin, $rootScope, FireConn, $window){
-
-  //reference to firebase
-  var db = new Firebase('https://bandmate.firebaseio.com');
-  //sets up simple login
-  $rootScope.loginObject = $firebaseSimpleLogin(db);
+App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$window', '$cookies', function($firebaseSimpleLogin, $rootScope, FireConn, $window, $cookies){
 
   // login function
   $rootScope.loginUser = function(){
@@ -37,6 +32,9 @@ App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '
   // check user
   function checkUser(){
 
+    //reference to firebase
+    var db = new Firebase('https://bandmate.firebaseio.com');
+
     var allUsers = [];
     var exist = true;
 
@@ -64,6 +62,10 @@ App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '
       // FireConn.$add($rootScope.currentUser);
       db.child($rootScope.currentUser.id).set($rootScope.currentUser);
     }
+
+    $cookies.id = $rootScope.currentUser.id;
+    $cookies.name = $rootScope.currentUser.name;
+    $cookies.imgUrl = $rootScope.currentUser.imgUrl;
 
     console.log(exist);
 
