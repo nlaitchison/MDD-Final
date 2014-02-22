@@ -2,7 +2,7 @@
 
 /*global App*/
 
-App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', function ($scope, FireConn, $window, $filter) {
+App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', '$rootScope', function ($scope, FireConn, $window, $filter, $rootScope) {
 
 	var keywords = '';
 	var matches = [];
@@ -25,22 +25,21 @@ App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', functi
 		// gets all usernames from Firebase
 	    db.on('child_added', function(snapshot){
 
-	      allUsers.push(snapshot.val());
+	      // allUsers.push(snapshot.val());
+
+		  if(snapshot.val().skills === keywords){
+
+		    console.log('match');
+		    matches.push(snapshot.val());
+
+		  }
 
 	    });
 
-	    for( var i=0; i<allUsers.length; i++){
-	      if(allUsers[i].skills === keywords){
-
-	        console.log('match');
-	        matches.push(allUsers[i]);
-
-	      }
-	    }
-
-	    $scope.results = matches;
+	    $rootScope.results = matches;
 	    console.log($scope.results);
 	    $window.location.href = '#/search';
+
 	};
 
 }]);
