@@ -1,6 +1,7 @@
 'use strict';
 
 /*global App*/
+/*global Firebase*/
 
 App.controller('EditCtrl', ['$scope', '$rootScope', 'FireConn', '$firebase', '$routeParams', function ($scope, $rootScope, FireConn, $firebase, $routeParams) {
 
@@ -13,38 +14,38 @@ App.controller('EditCtrl', ['$scope', '$rootScope', 'FireConn', '$firebase', '$r
 
 	$scope.save = function(){
 
-		if($scope.user.name != null){
+		if($scope.user.name !== null){
 			db.update({'name' : $scope.user.name});
 		}
-		if($scope.user.age != null){
+		if($scope.user.age !== null){
 			db.update({'age' : $scope.user.age});
 		}
-		if($scope.user.location != null){
+		if($scope.user.location !== null){
 			db.update({'location' : $scope.user.location});
 		}
-		if($scope.user.email != null){
+		if($scope.user.email !== null){
 			db.update({'email' : $scope.user.email});
 		}
-		if($scope.user.phone != null){
+		if($scope.user.phone !== null){
 			console.log('phone', $scope.user.phone );
 			db.update({'phone' : $scope.user.phone});
 		}
-		if($scope.user.skills != null){
+		if($scope.user.skills !== null){
 			db.update({'skills' : $scope.user.skills});
 		}
-		if($scope.user.genre != null){
+		if($scope.user.genre !== null){
 			db.update({'genre' : $scope.user.genre});
 		}
-		if($scope.user.facebook != null){
+		if($scope.user.facebook !== null){
 			db.update({'facebook' : $scope.user.facebook});
 		}
-		if($scope.user.twitter != null){
+		if($scope.user.twitter !== null){
 			db.update({'twitter' : $scope.user.twitter});
 		}
-		if($scope.user.soundcloud != null){
+		if($scope.user.soundcloud !== null){
 			db.update({'soundcloud' : $scope.user.soundcloud});
 		}
-		if($scope.user.youtube != null){
+		if($scope.user.youtube !== null){
 			db.update({'youtube' : $scope.user.youtube});
 		}
 

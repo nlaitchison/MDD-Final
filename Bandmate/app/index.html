@@ -27,10 +27,7 @@
     <![endif]-->
 
     <div id="wrapper">
-
-      <input type="hidden" id="user_id" value="{{loginObject.user.provider}}{{loginObject.user.id}}">
-
-      <!-- logged out view -->
+<!--   logged out view
 
       <header ng-hide="loginObject.user" id="bg">
         <div class='container'>
@@ -48,7 +45,7 @@
             </div>
           </a>
         </div>
-      </header>
+      </header> -->
 
        <!-- logged in -->
 
@@ -78,41 +75,13 @@
             <li class="divider"></li>
             <li class="container"><a href="#/">YOUR STUDIO</a></li>
             <li class="divider"></li>
-            <li class="container"><a href="#" ng-click="loginObject.$logout()">LOGOUT</a></li>
+            <li class="container"><a href="#" ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
             <li class="divider"></li>
           </ul>
         </nav>
       </header>
 
-      <div id="main_content" class="container" ng-show="loginObject.user">
-
-        <!-- desktop nav -->
-
-        <aside id="sidebar_nav" class="one-third column">
-          <div id="account_info">
-            <div class="account_img">
-              <img src="{{loginObject.user.profile_image_url}}"></a>
-            </div>
-            <h3>{{loginObject.user.name}}</h3>
-            <div class="clear_fix"></div>
-          </div>
-          <ul>
-            <li class="divider"></li>
-            <li><a href="#/edit/{{loginObject.user.provider}}{{loginObject.user.id}}">EDIT PROFILE</a></li>
-            <li class="divider"></li>
-            <li><a href="#/">YOUR STUDIO</a></li>
-            <li class="divider"></li>
-            <li><a href="#" ng-click="loginObject.$logout()">LOGOUT</a></li>
-            <li class="divider"></li>
-          </ul>
-        </aside>
-
-        <form id="search_mobile">
-          <input type="search" placeholder="Search for a skill..." name="search">
-        </form>
-
-        <div ng-view=""></div>
-      </div><!-- end main_content -->
+      <div ng-view=""></div>
 
     </div> <!-- end wrapper -->
 
@@ -145,6 +114,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/MainCtrl.js"></script>
         <script src="scripts/services/factory.js"></script>
+        <script src="scripts/controllers/LoginCtrl.js"></script>
+        <script src="scripts/controllers/LogoutCtrl.js"></script>
         <script src="scripts/controllers/StudioCtrl.js"></script>
         <script src="scripts/controllers/EditCtrl.js"></script>
         <!-- endbuild -->
