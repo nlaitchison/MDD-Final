@@ -5,6 +5,7 @@
 App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', function ($scope, $rootScope, FireConn) {
 
 	$scope.users = FireConn;
+	console.log($scope.users);
 
 	// console.log('get current user', $rootScope.loginObject);
 	// var loginObjct = $rootScope.loginObject;
