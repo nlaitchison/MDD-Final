@@ -4,6 +4,9 @@
 /*global Firebase*/
 App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$window', '$cookies', function($firebaseSimpleLogin, $rootScope, FireConn, $window, $cookies){
 
+  // if($rootScope.loginObject.$getCurrentUser != null){
+  //   $window.location.href = '#/studio';
+  // }
   // login function
   $rootScope.loginUser = function(){
     $rootScope.loginObject.$login('twitter')

@@ -30,7 +30,7 @@
 
 		<h2>Your Studio</h2>
 
-		<article class="result" ng-repeat="($id, item) in users">
+		<article class="result" ng-repeat="item in studioUsers">
 			<div class="user_img">
 				<img ng-src="{{item.imgUrl}}">
 			</div>

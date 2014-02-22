@@ -56,7 +56,7 @@
 				</ul>
 			</div>
 			<div class="heart" ng-controller="StudioCtrl" >
-				<img src="images/heart-btn.png" ng-click="addToStudio(item.id)">
+				<img src="images/heart-btn.png" ng-click="addToStudio(item)">
 			</div>
 			<div class="clear_fix"></div>
 		</article>  <!-- end ressult -->
