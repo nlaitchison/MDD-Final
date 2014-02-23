@@ -2,7 +2,7 @@
 
 /*global App*/
 
-App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', '$rootScope', '$cookies', function ($scope, FireConn, $window, $filter, $rootScope, $cookies) {
+App.controller('SearchCtrl', ['$scope', 'FireConn', '$filter', '$rootScope', '$cookies','$firebase','$routeParams', function ($scope, FireConn, $filter, $rootScope, $cookies,$firebase,$routeParams) {
 
 
 	// set current user if it's been undefined
@@ -14,42 +14,10 @@ App.controller('SearchCtrl', ['$scope', 'FireConn', '$window', '$filter', '$root
 		};
 	}
 
-	var keywords = '';
-	var matches = [];
 
-	$scope.search = function(e){
-		console.log('search', $scope.searchKeywords);
-
-		keywords = $scope.searchKeywords;
-
-		results();
-	};
+	$scope.searchKeywords = $routeParams.keywords;
 
 	var db = new Firebase('https://bandmate.firebaseio.com');
-
-	function results(){
-
-		var allUsers = [];
-		matches = [];
-
-		// gets all usernames from Firebase
-	    db.on('child_added', function(snapshot){
-
-	      // allUsers.push(snapshot.val());
-
-		  if(snapshot.val().skills === keywords){
-
-		    console.log('match');
-		    matches.push(snapshot.val());
-
-		  }
-
-	    });
-
-	    $rootScope.results = matches;
-	    console.log($scope.results);
-	    $window.location.href = '#/search';
-
-	};
+	$scope.results = $firebase(db);
 
 }]);

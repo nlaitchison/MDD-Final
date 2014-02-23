@@ -21,7 +21,7 @@
 	</aside>
 
 	<form id="search_mobile">
-	<input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
+	<input type="text" placeholder="Search for a skill..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">
 	</form>
 
 	<section id="edit" class="two-thirds column">

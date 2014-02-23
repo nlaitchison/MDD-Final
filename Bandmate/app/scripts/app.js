@@ -22,7 +22,7 @@ App.config(function ($routeProvider) {
       templateUrl: 'views/edit.tpl',
       controller: 'EditCtrl'
     })
-    .when('/search', {
+    .when('/search/:keywords', {
       templateUrl: 'views/search.tpl',
       controller: 'SearchCtrl'
     })
@@ -31,12 +31,19 @@ App.config(function ($routeProvider) {
     });
 });
 
-App.run(['$firebaseSimpleLogin', '$rootScope', function($firebaseSimpleLogin, $rootScope){
+App.run(['$firebaseSimpleLogin', '$rootScope','$location', function($firebaseSimpleLogin, $rootScope,$location){
 
     //reference to firebase
     var db = new Firebase('https://bandmate.firebaseio.com');
     //sets up simple login
     $rootScope.loginObject = $firebaseSimpleLogin(db);
+
+
+
+    $rootScope.search = function(e){
+
+      $location.path('/search/'+$rootScope.searchKeywords);
+    };
 
 }]);
 
@@ -65,5 +72,16 @@ App.filter('toArray', function () {
       return Object.defineProperty(obj[key], '$key', {__proto__: null, value: key});
     });
   };
-
 });
+
+App.filter('removeStudio', function()
+{
+  return function(array)
+  {
+    for (var i = array.length - 1; i >= 0; i--) {
+      array[i].studio = null;
+    }
+    return array;
+  }
+});
+

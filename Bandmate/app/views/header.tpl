@@ -8,7 +8,7 @@
         <a href="#/studio"><img src="images/menu-btn.png" alt="Menu"></a>
       </div>
       <form id="search_desktop" class="seven columns">
-        <input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
+        <input type="text" placeholder="Search for a skill..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">
       </form>
     </div>
   </div> <!-- end main_header -->

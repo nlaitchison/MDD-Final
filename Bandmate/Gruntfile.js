@@ -8,10 +8,44 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+
+  var pkg = require('./package.json');
+
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
   grunt.initConfig({
+
+    // Configuration to be run (and then tested).git@github.com:nlaitchison/MDD-Final.git
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+      },
+
+      stage: {
+        options: {
+          branch: 'staging',
+          remote: 'git@github.com:nlaitchison/MDD-Final.git',
+          commit: true,
+          push: true,
+          connectCommits: false,
+          message: 'Check *this* out.' + pkg.version,
+          tag: pkg.version
+        }
+      },
+      deploy: {
+        options: {
+          branch: 'gh-pages',
+          remote: 'git@github.com:kaneisha/Full-Sail-Hangout.git',
+          commit: true,
+          push: true,
+          connectCommits: false,
+          message: 'Check *this* out.' + pkg.version,
+          tag: pkg.version
+        }
+      },
+    },
+
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
@@ -227,7 +261,9 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
+            '.gitignore',
+            'views/{,*/}*.html',
+            'views/{,*/}*.tpl',
             'images/{,*/}*.{gif,webp}',
             'fonts/*'
           ]
@@ -296,6 +332,21 @@ module.exports = function (grunt) {
     }
   });
 
+    grunt.registerTask('deploy',[
+    'buildcontrol:deploy'
+  ]);
+
+  grunt.registerTask('cleanIt',[
+    'buildcontrol:deploy'
+  ]);
+
+  grunt.registerTask('stage',[
+    'buildcontrol:stage'
+  ]);
+
+  // these plugins provide necessary tasks
+  grunt.loadNpmTasks('grunt-build-control');
+
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -309,6 +360,7 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
 
   grunt.registerTask('test', [
     'clean:server',

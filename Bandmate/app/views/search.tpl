@@ -21,7 +21,7 @@
 	</aside>
 
 	<form id="search_mobile">
-	<input type="text" placeholder="Search for a skill..." ng-model="searchKeywords" id="search" ng-controller="SearchCtrl" ng-enter="search()">
+	<input type="text" placeholder="Search for a skill..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">
 	</form>
 
 	<section id="results" class="two-thirds column">
@@ -30,7 +30,7 @@
 
 		<h2>Search Results</h2>
 
-		<article class="result" ng-repeat="item in results">
+		<article class="result" ng-repeat="item in results | toArray | removeStudio | filter:searchKeywords">
 			<div class="user_img">
 				<img ng-src="{{item.imgUrl}}">
 			</div>
