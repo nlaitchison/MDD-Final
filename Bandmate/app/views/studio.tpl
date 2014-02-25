@@ -1,5 +1,5 @@
 <div ng-include src="'views/header.tpl'"></div>
-<div id="main_content" class="container">
+<div id="main_content" class="container" ng-class="{'move_up' : !clicked, 'move_down' : clicked}">
 
   <aside id="sidebar_nav" class="one-third column">
 	<div id="account_info">

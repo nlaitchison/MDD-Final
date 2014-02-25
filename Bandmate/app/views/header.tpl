@@ -5,7 +5,7 @@
         <a href="#/studio"><h1>Bandmate</h1></a>
       </div>
       <div id="menu">
-        <a href="#/studio"><img src="images/menu-btn.png" alt="Menu"></a>
+        <a href="#/studio"><img src="images/menu-btn.png" alt="Menu" ng-click="$root.clicked = !$root.clicked"></a>
       </div>
       <form id="search_desktop" class="seven columns">
         <input type="text" placeholder="Search for a skill..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">
@@ -15,7 +15,7 @@
 
   <!-- desktop nav -->
 
-  <nav>
+  <nav class="animated" ng-class="{'slideInDown' : $root.clicked, 'slideOutUp' : !$root.clicked}">
     <ul id="mobile">
       <li class="divider"></li>
       <li class="user container"> {{currentUser.name}} </li>
