@@ -5,7 +5,7 @@
         <a href="#/studio"><h1>Bandmate</h1></a>
       </div>
       <div id="menu">
-        <a href="#/studio"><img src="images/menu-btn.png" alt="Menu" ng-click="$root.clicked = !$root.clicked"></a>
+        <img src="images/menu-btn.png" alt="Menu" ng-click="$root.clicked = !$root.clicked">
       </div>
       <form id="search_desktop" class="seven columns">
         <input type="text" placeholder="Search for a skill..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">

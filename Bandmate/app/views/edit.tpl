@@ -1,5 +1,5 @@
 <div ng-include src="'views/header.tpl'"></div>
-<div id="main_content" class="container">
+<div id="main_content" class="container" ng-class="{'move_up' : !clicked, 'move_down' : clicked}">
 
   <aside id="sidebar_nav" class="one-third column">
 	<div id="account_info">
@@ -52,11 +52,11 @@
 			<fieldset>
 				<div class="form_input">
 					<label for="skills">Skills</label>
-					<input id="skills" type="text" autofocus="autofocus" name="skills" placeholder="ex. guitar, vocals, piano" ng-model="user.skills">
+					<input id="skills" type="text" required="required" autofocus="autofocus" name="skills" placeholder="ex. guitar, vocals, piano" ng-model="user.skills">
 				</div>
 				<div class="form_input">
 					<label for="genres">Genres</label>
-					<input id="genres" type="text" autofocus="autofocus" name="genres" placeholder="ex. indie, alternative" ng-model="user.genre">
+					<input id="genres" type="text" required="required" autofocus="autofocus" name="genres" placeholder="ex. indie, alternative" ng-model="user.genre">
 				</div>
 			</fieldset>
 			<fieldset>

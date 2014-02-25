@@ -60,14 +60,6 @@ ul{
 	margin-top: 15px;
 }
 
-#main_content.move_up{
-	margin-top: -185px;
-}
-
-#main_content.move_down{
-	margin-top: 15px;
-}
-
 input, button{
 	background-color: #f4f4f4;
 	border: 1px solid #bbbbbb;
@@ -430,6 +422,9 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 }
 
 @media only screen and (max-width: 767px) {
+
+	#main_content.move_up{ margin-top: -185px; }
+	#main_content.move_down{ margin-top: 15px; }
 
 	form#search, .heart img, .form_input label{ width: 100%; }
 	#sidebar_nav, #search_desktop{ display: none;}

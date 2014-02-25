@@ -4,7 +4,6 @@
 
 App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', '$cookies', '$filter','$firebase', function ($scope, $rootScope, FireConn, $cookies, $filter,$firebase) {
 
-
 	// set current user if it's been undefined
 	if($rootScope.currentUser === undefined){
 		$rootScope.currentUser ={
@@ -20,29 +19,18 @@ App.controller('StudioCtrl', ['$scope', '$rootScope', 'FireConn', '$cookies', '$
 	$scope.studioUsers = $firebase(userStudio);
 
 	$scope.addToStudio = function(user){
-
-		// var addedUser = {
-		// 	'age' : user.age,
-		// 	'email' : user.email,
-		// 	'facebook' : user.facebook,
-		// 	'genre' : user.genre,
-		// 	'id' : user.id,
-		// 	'imgUrl' : user.imgUrl,
-		// 	'location' : user.location,
-		// 	'name' : user.name,
-		// 	'phone' : user.phone,
-		// 	'skills' : user.skills,
-		// 	'soundcloud' : user.soundcloud,
-		// 	'twitter' : user.twitter,
-		// 	'youtube' : user.youtube
-		// };
-
 		console.log('add', user);
 
-		$scope.studioUsers.$add(user);
-		// userStudio.child(addedUser.id).set(addedUser);
-		// userStudio.child(user);
+		// var user = $scope.studioUsers.$child(user.uid);
 
-	}
+		for(var i=0; i<$scope.studioUsers.length; i++){
+			if($scope.studioUsers[i].id != user.id){
+				$scope.studioUsers.$add(user);
+			}else{
+				$scope.studioUsers.$remove($scope.studioUsers[i]);
+			}
+		}
+
+	};
 
 }]);
