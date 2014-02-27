@@ -14,6 +14,7 @@ angular.module('bandmateApp')
 
 		return function(id){
 
+			//sets the firebase to a specific user
 			var url = 'https://bandmate.firebaseIO.com/' + id,
 				ref = new Firebase(url);
 

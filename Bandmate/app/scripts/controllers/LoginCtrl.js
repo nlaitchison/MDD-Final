@@ -2,18 +2,14 @@
 
 /*global App*/
 /*global Firebase*/
-App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$window', '$cookies', function($firebaseSimpleLogin, $rootScope, FireConn, $window, $cookies){
+App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$window', '$cookies', '$location', function($firebaseSimpleLogin, $rootScope, FireConn, $window, $cookies, $location){
 
-  // if($rootScope.loginObject.$getCurrentUser != null){
-  //   $window.location.href = '#/studio';
-  // }
-  // login function
   $rootScope.loginUser = function(){
+    // login the user through twitter
     $rootScope.loginObject.$login('twitter')
       .then(function(user){
 
-        console.log(user);
-
+        // set the currentUser in the rootscope
         $rootScope.currentUser = {
           'id' : user.provider + user.id,
           'name' : user.name,
@@ -21,12 +17,11 @@ App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '
           'imgUrl' : user.profile_image_url
         };
 
-        console.log('meow', $rootScope.currentUser);
-
         checkUser();
 
       },function(error){
 
+        // if there's an login error
         console.log(error, 'user auth failed');
 
       });
@@ -38,42 +33,38 @@ App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '
     //reference to firebase
     var db = new Firebase('https://bandmate.firebaseio.com');
 
+    // create vars
     var allUsers = [];
     var exist = true;
 
     // gets all usernames from Firebase
     db.on('child_added', function(snapshot){
-
       allUsers.push(snapshot.val());
-
     });
 
+    // for each user in Firebase
     for( var i=0; i<allUsers.length; i++){
+      // if the logged in user exist in Firebase
       if(allUsers[i].id === $rootScope.currentUser.id){
-
+        // set existto true
         exist = true;
+        // set the current user to that user
         $rootScope.currentUser = allUsers[i];
-
       }else{
-
+        //set exist to false
         exist = false;
-
       }
     }
 
+    // if exist is false
     if(!exist){
-      // FireConn.$add($rootScope.currentUser);
+      // add the user to Firebase
       db.child($rootScope.currentUser.id).set($rootScope.currentUser);
     }
 
-    $cookies.id = $rootScope.currentUser.id;
-    $cookies.name = $rootScope.currentUser.name;
-    $cookies.imgUrl = $rootScope.currentUser.imgUrl;
+    // the user is logged in, so take them to their studio
+    $location.path('/studio/' + $rootScope.currentUser.id);
 
-    console.log(exist);
-
-    $window.location.href = '#/studio';
-
-  }
+  };
 
 }]);

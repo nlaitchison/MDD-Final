@@ -42,7 +42,6 @@ App.run(['$firebaseSimpleLogin', '$rootScope','$location', '$firebase', 'FireUse
     $rootScope.$on('$firebaseSimpleLogin:login', function(e, user){
 
       // get the logged in users id that is stored in firebase
-      console.log(user);
       var userId = user.provider + user.id;
 
       // then get this user from firebase and set it to the rootscope
@@ -50,10 +49,15 @@ App.run(['$firebaseSimpleLogin', '$rootScope','$location', '$firebase', 'FireUse
 
       // set the rootscope so user info can be displayed in views
       $rootScope.currentUser.id = userId;
-      $rootScope.currentUser.name = user.name;
+      // $rootScope.currentUser.name = user.name;
       $rootScope.currentUser.imgUrl = user.profile_image_url;
 
-      console.log('run', $rootScope.currentUser.id);
+      // check the location
+      // if the location is the landing page and a user is logged in
+      // go to the studio page
+      if($location.path() === '/'){
+        $location.path('/studio/' + $rootScope.currentUser.id);
+      }
 
     });
 
@@ -67,6 +71,9 @@ App.run(['$firebaseSimpleLogin', '$rootScope','$location', '$firebase', 'FireUse
 
 }]);
 
+
+// directive to check if the enter key has been pressed
+// using for search field
 App.directive('ngEnter', function() {
   return function(scope, element, attrs) {
     element.bind('keydown keypress', function(event) {
@@ -80,6 +87,8 @@ App.directive('ngEnter', function() {
   };
 });
 
+// filter to turn objects into arrays
+// using in search so data can be filtered
 App.filter('toArray', function () {
   'use strict';
 
@@ -94,6 +103,9 @@ App.filter('toArray', function () {
   };
 });
 
+// filter to remove user studio fron the results on the search page
+// using to prevent users that don't match the search results but
+// have matching users in their studio from showing in the results
 App.filter('removeStudio', function()
 {
   return function(array)

@@ -6,14 +6,14 @@
 	  <div class="account_img">
 	    <img src="{{loginObject.user.profile_image_url}}"></a>
 	  </div>
-	  <h3>{{loginObject.user.name}}</h3>
+	  <h3>{{currentUser.name}}</h3>
 	  <div class="clear_fix"></div>
 	</div>
 	<ul>
 	  <li class="divider"></li>
-	  <li><a href="#/edit/{{loginObject.user.provider}}{{loginObject.user.id}}">EDIT PROFILE</a></li>
+	  <li><a href="#/edit/{{currentUser.id}}">EDIT PROFILE</a></li>
 	  <li class="divider"></li>
-	  <li><a href="#/studio">YOUR STUDIO</a></li>
+	  <li><a href="#/studio/{{currentUser.id}}">YOUR STUDIO</a></li>
 	  <li class="divider"></li>
 	  <li><a ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
 	  <li class="divider"></li>
