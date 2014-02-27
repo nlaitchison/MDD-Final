@@ -38,7 +38,7 @@ App.run(['$firebaseSimpleLogin', '$rootScope','$location', function($firebaseSim
     //sets up simple login
     $rootScope.loginObject = $firebaseSimpleLogin(db);
 
-
+    console.log($rootScope.loginObject.$getCurrentUser());
 
     $rootScope.search = function(e){
 

@@ -48,6 +48,11 @@ a{
 	text-decoration: none;
 }
 
+a, #menu, .heart, ul.social_icons li, input[type=submit]{
+	cursor: pointer;
+	cursor: hand;
+}
+
 ul{
 	list-style-type: none;
 }
@@ -405,6 +410,9 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 	opacity: .5;
 }
 
+.required{
+	color: #2a248e;
+}
 
 /* ---------------------------------------------------------------------------------------------------
 		∆ Media Queries
