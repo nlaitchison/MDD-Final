@@ -14,7 +14,7 @@ App.config(function ($routeProvider) {
       templateUrl: 'views/login.tpl',
       controller: 'LoginCtrl'
     })
-    .when('/studio', {
+    .when('/studio/:id', {
       templateUrl: 'views/studio.tpl',
       controller: 'StudioCtrl'
     })
@@ -31,17 +31,37 @@ App.config(function ($routeProvider) {
     });
 });
 
-App.run(['$firebaseSimpleLogin', '$rootScope','$location', function($firebaseSimpleLogin, $rootScope,$location){
+App.run(['$firebaseSimpleLogin', '$rootScope','$location', '$firebase', 'FireUser', function($firebaseSimpleLogin, $rootScope, $location, $firebase, FireUser){
 
     //reference to firebase
     var db = new Firebase('https://bandmate.firebaseio.com');
     //sets up simple login
     $rootScope.loginObject = $firebaseSimpleLogin(db);
 
-    console.log($rootScope.loginObject.$getCurrentUser());
+    // if a user is logged in then
+    $rootScope.$on('$firebaseSimpleLogin:login', function(e, user){
 
+      // get the logged in users id that is stored in firebase
+      console.log(user);
+      var userId = user.provider + user.id;
+
+      // then get this user from firebase and set it to the rootscope
+      $rootScope.currentUser = FireUser(userId);
+
+      // set the rootscope so user info can be displayed in views
+      $rootScope.currentUser.id = userId;
+      $rootScope.currentUser.name = user.name;
+      $rootScope.currentUser.imgUrl = user.profile_image_url;
+
+      console.log('run', $rootScope.currentUser.id);
+
+    });
+
+    // search function for search input on all pages
     $rootScope.search = function(e){
 
+      // set's location to search view and appends search keywords
+      // so they can be easily passed to the search ctrl
       $location.path('/search/'+$rootScope.searchKeywords);
     };
 

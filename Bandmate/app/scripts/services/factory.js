@@ -8,4 +8,16 @@ angular.module('bandmateApp')
 			ref = new Firebase(url);
 
 		return $firebase(ref);
+	}])
+
+	.factory('FireUser', ['$firebase',function ($firebase) {
+
+		return function(id){
+
+			var url = 'https://bandmate.firebaseIO.com/' + id,
+				ref = new Firebase(url);
+
+			return $firebase(ref);
+
+		};
 	}]);

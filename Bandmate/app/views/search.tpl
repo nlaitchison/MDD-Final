@@ -21,7 +21,7 @@
 	</aside>
 
 	<form id="search_mobile">
-	<input type="text" placeholder="Search for a skill..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">
+	<input type="text" placeholder="Search for a skill, genre, location, name or age..." ng-model="$root.searchKeywords" id="search" ng-enter="search()">
 	</form>
 
 	<section id="results" class="two-thirds column">
@@ -30,7 +30,9 @@
 
 		<h2>Search Results</h2>
 
-		<article class="result" ng-repeat="item in results | toArray | removeStudio | filter:searchKeywords">
+
+
+		<article class="result" ng-repeat="item in filtered = (results | toArray | removeStudio | filter:searchKeywords)">
 			<div class="user_img">
 				<img ng-src="{{item.imgUrl}}">
 			</div>
@@ -60,6 +62,8 @@
 			</div>
 			<div class="clear_fix"></div>
 		</article>  <!-- end ressult -->
+
+		<p ng-show="filtered.length == 0" class="no_results"> No users match your search, please try again. </p>
 
 	</section> <!-- end results -->
 

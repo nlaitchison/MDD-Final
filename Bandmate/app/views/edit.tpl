@@ -26,15 +26,16 @@
 
 	<section id="edit" class="two-thirds column">
 		<h2> Edit Profile </h2>
-		<form id="edit_form" ng-submit="save(user)">
+		<form id="edit_form" ng-submit="save(user)" name="editUser">
 			<fieldset>
 				<div class="form_input">
 					<label for="name">Name <span class="required">*</span></label>
 					<input id="name" type="text" required="required" autofocus="autofocus" name="name" placeholder="Name" ng-model="user.name">
+					<span class="required" ng-show="editUser.title.$error.required">Required!</span>
 				</div>
 				<div class="form_input">
 					<label for="age">Age <span class="required">*</span></label>
-					<input id="age" type="number" required="required" name="age" placeholder="Age ex. 22" ng-model="user.age">
+					<input id="age" type="number" required="required" name="age" placeholder="Age ex. 22" ng-model="user.age" maxlength="2">
 				</div>
 				<div class="form_input">
 					<label for="location">Location <span class="required">*</span></label>
@@ -46,7 +47,7 @@
 				</div>
 				<div class="form_input">
 					<label for="phone">Phone</label>
-					<input id="phone" type="number" name="phone" placeholder="1234567890" ng-model="user.phone">
+					<input id="phone" type="number" name="phone" placeholder="ex. 5554567890" ng-model="user.phone">
 				</div>
 			</fieldset>
 			<fieldset>
@@ -79,7 +80,7 @@
 			</fieldset>
 			<fieldset class="buttons">
 				<input type="submit" class="save_profile" value="Save Profile">
-				<input type="submit" class="cancel" value="Cancel">
+				<a href="#/studio"><input type="button" class="cancel" value="Cancel"></a>
 			</fieldset>
 		</form>
 

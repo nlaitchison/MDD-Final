@@ -22,7 +22,7 @@
       <li class="divider"></li>
       <li class="container"><a href="#/edit/{{currentUser.id}}">EDIT PROFILE</a></li>
       <li class="divider"></li>
-      <li class="container"><a href="#/studio">YOUR STUDIO</a></li>
+      <li class="container"><a href="#/studio/{{currentUser.id}}">YOUR STUDIO</a></li>
       <li class="divider"></li>
       <li class="container"><a ng-controller="LogoutCtrl" ng-click="logoutUser()">LOGOUT</a></li>
       <li class="divider"></li>
