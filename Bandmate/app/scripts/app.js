@@ -22,7 +22,7 @@ App.config(function ($routeProvider) {
       templateUrl: 'views/edit.tpl',
       controller: 'EditCtrl'
     })
-    .when('/search/:keywords', {
+    .when('/:id/search/:keywords', {
       templateUrl: 'views/search.tpl',
       controller: 'SearchCtrl'
     })
@@ -59,6 +59,8 @@ App.run(['$firebaseSimpleLogin', '$rootScope','$location', '$firebase', 'FireUse
         $location.path('/studio/' + $rootScope.currentUser.id);
       }
 
+      console.log('root', $rootScope.currentUser.id);
+
     });
 
     // search function for search input on all pages
@@ -66,8 +68,11 @@ App.run(['$firebaseSimpleLogin', '$rootScope','$location', '$firebase', 'FireUse
 
       // set's location to search view and appends search keywords
       // so they can be easily passed to the search ctrl
-      $location.path('/search/'+$rootScope.searchKeywords);
+      $location.path('/'+$rootScope.currentUser.id+'/search/'+$rootScope.searchKeywords);
+
     };
+
+
 
 }]);
 

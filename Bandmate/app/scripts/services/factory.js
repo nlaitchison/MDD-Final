@@ -21,4 +21,17 @@ angular.module('bandmateApp')
 			return $firebase(ref);
 
 		};
+	}])
+
+	.factory('FireStudio', ['$firebase',function ($firebase) {
+
+		return function(userId){
+
+			//sets the firebase to a specific user studio
+			var url = 'https://bandmate.firebaseIO.com/' + userId + '/studio/',
+				ref = new Firebase(url);
+
+			return $firebase(ref);
+
+		};
 	}]);

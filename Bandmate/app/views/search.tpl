@@ -57,7 +57,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="heart" ng-controller="StudioCtrl" >
+			<div class="heart" ng-controller="StudioCtrl" ng-class="{'darker' : currentUser.studio[item.id]}">
 				<img src="images/heart-btn.png" ng-click="addToStudio(item)">
 			</div>
 			<div class="clear_fix"></div>

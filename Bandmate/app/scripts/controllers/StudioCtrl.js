@@ -4,10 +4,11 @@
 
 App.controller('StudioCtrl', ['$scope', 'FireConn' ,'$routeParams', '$rootScope', '$firebase', function ($scope, FireConn, $routeParams, $rootScope, $firebase) {
 
-	console.log('user studio', $routeParams.id );
 	var userStudio = new Firebase('https://bandmate.firebaseio.com/' + $routeParams.id + '/studio');
-
 	$scope.studioUsers = $firebase(userStudio);
+
+	// var userInStudio = new Firebase('https://bandmate.firebaseio.com/' + $rootScope.currentUser.id + '/studio'+id);
+	// // $scope.meow = $firebase(userInStudio);
 
 	// $scope.addToStudio = function(user){
 	// 	// console.log('add', user);
@@ -28,5 +29,14 @@ App.controller('StudioCtrl', ['$scope', 'FireConn' ,'$routeParams', '$rootScope'
 	// 	// }
 
 	// };
+
+	$scope.addToStudio = function(user){
+
+		console.log($scope.studioUsers[user.id]);
+		console.log(user.id);
+		var userId = user.id;
+		$scope.studioUsers[userId] = user;
+		$scope.studioUsers.$save(userId);
+	};
 
 }]);
