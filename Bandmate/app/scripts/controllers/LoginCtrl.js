@@ -2,7 +2,7 @@
 
 /*global App*/
 /*global Firebase*/
-App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$window', '$cookies', '$location', function($firebaseSimpleLogin, $rootScope, FireConn, $window, $cookies, $location){
+App.controller('LoginCtrl', ['$firebaseSimpleLogin', '$rootScope', 'FireConn', '$location', function($firebaseSimpleLogin, $rootScope, FireConn, $location){
 
   $rootScope.loginUser = function(){
     // login the user through twitter

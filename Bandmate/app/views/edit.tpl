@@ -29,34 +29,33 @@
 		<form id="edit_form" ng-submit="save(user)" name="editUser">
 			<fieldset>
 				<div class="form_input">
-					<label for="name">Name <span class="required">*</span></label>
+					<label for="name">Name <span class="required">* </span><span class="required" ng-show="editUser.name.$error.required">Required</span></label>
 					<input id="name" type="text" required="required" autofocus="autofocus" name="name" placeholder="Name" ng-model="user.name">
-					<span class="required" ng-show="editUser.title.$error.required">Required!</span>
 				</div>
 				<div class="form_input">
-					<label for="age">Age <span class="required">*</span></label>
+					<label for="age">Age <span class="required">* </span><span class="required" ng-show="editUser.age.$error.required">Required</span><span class="required" ng-show="editUser.age.$error.number">Numbers Only</span></label>
 					<input id="age" type="number" required="required" name="age" placeholder="Age ex. 22" ng-model="user.age" maxlength="2">
 				</div>
 				<div class="form_input">
-					<label for="location">Location <span class="required">*</span></label>
+					<label for="location">Location <span class="required">* </span><span class="required" ng-show="editUser.location.$error.required">Required</span></label>
 					<input id="location" type="text" required="required" name="location" placeholder="City, State" ng-model="user.location">
 				</div>
 				<div class="form_input">
-					<label for="email">Email <span class="required">*</span></label>
+					<label for="email">Email <span class="required">* </span><span class="required" ng-show="editUser.email.$error.required">Required!</span></label>
 					<input id="email" type="text" required="required" name="email" placeholder="example@domain.com" ng-model="user.email">
 				</div>
 				<div class="form_input">
-					<label for="phone">Phone</label>
+					<label for="phone">Phone <span class="required" ng-show="editUser.phone.$error.number">Numbers Only</span></label>
 					<input id="phone" type="number" name="phone" placeholder="ex. 5554567890" ng-model="user.phone">
 				</div>
 			</fieldset>
 			<fieldset>
 				<div class="form_input">
-					<label for="skills">Skills <span class="required">*</span></label>
+					<label for="skills">Skills <span class="required">* </span><span class="required" ng-show="editUser.skills.$error.required">Required</span></label>
 					<input id="skills" type="text" required="required" name="skills" placeholder="ex. guitar, vocals, piano" ng-model="user.skills">
 				</div>
 				<div class="form_input">
-					<label for="genres">Genres <span class="required">*</span></label>
+					<label for="genres">Genres <span class="required">* </span><span class="required" ng-show="editUser.genres.$error.required">Required</span></label>
 					<input id="genres" type="text" required="required" name="genres" placeholder="ex. indie, alternative" ng-model="user.genre">
 				</div>
 			</fieldset>

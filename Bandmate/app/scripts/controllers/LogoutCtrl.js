@@ -2,7 +2,7 @@
 
 /*global App*/
 
-App.controller('LogoutCtrl',['$firebaseSimpleLogin', '$rootScope', '$window', '$cookies', function($firebaseSimpleLogin, $rootScope, $window, $cookies){
+App.controller('LogoutCtrl',['$firebaseSimpleLogin', '$rootScope', '$window', function($firebaseSimpleLogin, $rootScope, $window){
 
   // logout function
   $rootScope.logoutUser = function(){
