@@ -32,11 +32,15 @@ App.controller('StudioCtrl', ['$scope', 'FireConn' ,'$routeParams', '$rootScope'
 
 	$scope.addToStudio = function(user){
 
-		console.log($scope.studioUsers[user.id]);
-		console.log(user.id);
-		var userId = user.id;
-		$scope.studioUsers[userId] = user;
-		$scope.studioUsers.$save(userId);
+		if($scope.studioUsers[user.id] != null){
+			$scope.studioUsers.$remove(user.id);
+		}else{
+			console.log(user.id);
+			var userId = user.id;
+			$scope.studioUsers[userId] = user;
+			$scope.studioUsers.$save(userId);
+		}
+
 	};
 
 }]);

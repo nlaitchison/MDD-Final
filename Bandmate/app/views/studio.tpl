@@ -55,7 +55,7 @@
 			</div>
 			<!-- <div class="heart" ng-click="myStyle={opacity:'1'}" ng-style="myStyle"> -->
 			<div class="heart" ng-class="{'darker' : currentUser.studio[item.id]}">
-				<img src="images/heart-btn.png">
+				<img src="images/heart-btn.png" ng-click="addToStudio(item)">
 			</div>
 			<div class="clear_fix"></div>
 		</article>  <!-- end ressult -->

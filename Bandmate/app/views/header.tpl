@@ -2,7 +2,7 @@
   <div id="main_header">
     <div class="container">
       <div id="logo">
-        <a href="#/studio"><h1>Bandmate</h1></a>
+        <a href="#/studio/{{currentUser.id}}"><h1>Bandmate</h1></a>
       </div>
       <div id="menu">
         <img src="images/menu-btn.png" alt="Menu" ng-click="$root.clicked = !$root.clicked">
