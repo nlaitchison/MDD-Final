@@ -48,6 +48,11 @@ a{
 	text-decoration: none;
 }
 
+a, #menu, .heart, ul.social_icons li, input[type=submit], input[type=button]{
+	cursor: pointer;
+	cursor: hand;
+}
+
 ul{
 	list-style-type: none;
 }
@@ -77,6 +82,10 @@ h3, input, nav li.user.container, nav li a:hover, #sidebar_nav li a:hover{
 
 #sidebar_nav, #results, #edit{
 	margin-top: 20px;
+}
+
+.required, p.no_results{
+	color: #2a248e;
 }
 
 
@@ -130,7 +139,7 @@ header#bg p{
 	border: 1px solid #bbbbbb;
 	width: 180px;
 	margin: 12px auto 0;
-	padding: 10px 10px 4px;
+	padding: 10px 10px 6px;
 }
 
 .twitter_login{
@@ -180,6 +189,8 @@ header#bg .github_login p{
 #main_header{
 	padding: 10px 0;
 	background-color: #e5e5e5;
+	z-index: 2;
+	position: relative;
 }
 
 #logo{
@@ -200,7 +211,7 @@ h1{
 	margin: 22px 0 0;
 }
 
-#search_desktop input[type=search]{
+#search_desktop input[type=text]#search{
 	background: url(../images/search-icon-small.png) 97% 60% no-repeat;
 	padding: 5px;
 	background-color: #f6f6f6;
@@ -212,6 +223,10 @@ h1{
 	height: 50px;
 	width: 35px;
 	float: right;
+}
+
+nav{
+	z-index: -1;
 }
 
 nav, #account_info, #sidebar_nav li{
@@ -264,6 +279,7 @@ nav li.divider, #sidebar_nav li.divider{
 
 .account_img img{
 	width: 100%;
+	border-radius: 2px;
 }
 
 
@@ -277,9 +293,10 @@ nav li.divider, #sidebar_nav li.divider{
 	padding: 0 0 20px;
 }
 
-#search_mobile input[type=search]{
+#search_mobile input[type=text]#search{
 	background: url(../images/search-icon.png) 97% 60% no-repeat;
 	padding: 10px;
+	width: 95%;
 }
 
 .result{
@@ -296,6 +313,7 @@ nav li.divider, #sidebar_nav li.divider{
 
 .user_img img{
 	width: 100%;
+	border-radius: 2px;
 }
 
 .user_info{
@@ -334,6 +352,10 @@ ul.more li.divide_info{
 
 .user_img, .user_info, ul.social_icons li, .heart{
 	float: left;
+}
+
+.darker{
+	opacity: 1;
 }
 
 /* ---------------------------------------------------------------------------------------------------
@@ -379,20 +401,23 @@ ul.more li.divide_info{
 	padding: 15px 0 0;
 }
 
-fieldset.buttons input[type=submit]{
+fieldset.buttons input[type=submit], fieldset.buttons input[type=button]{
 	padding: 5px;
 	margin-right: 10px;
+	-webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
 
 input[type=submit].save_profile{
 	color: #2a248e;
 }
 
-input[type=submit].cancel{
+input[type=button].cancel{
 	color: #626262;
 }
 
-input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
+input[type=submit].save_profile:hover, input[type=button].cancel:hover{
 	opacity: .5;
 }
 
@@ -414,6 +439,9 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 
 @media only screen and (max-width: 767px) {
 
+	#main_content.move_up{ margin-top: -185px; }
+	#main_content.move_down{ margin-top: 15px; }
+
 	form#search, .heart img, .form_input label{ width: 100%; }
 	#sidebar_nav, #search_desktop{ display: none;}
 
@@ -430,7 +458,7 @@ input[type=submit].save_profile:hover, input[type=submit].cancel:hover{
 	.form_input label{ float: none; text-align: left;}
 	.form_input input{ float: none; width: 96%; padding: 10px 2%; margin-bottom: 0;}
 
-	#edit_form input[type=submit]{ width: 47%; padding: 10px 0; margin-right: 0; }
+	#edit_form input[type=submit], #edit_form input[type=button]{ width: 47%; padding: 10px 0; margin-right: 0; }
 
 	#edit_form input[type=submit].save_profile{ margin-right: 4%;}
 
