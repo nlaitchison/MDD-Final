@@ -3,7 +3,7 @@ MDD-Final
 
 Nicole Aitchison
 
-MDD 1402 Final Project
+Full Sail University MDD 1402 Final Project
 
 Bandmate: http://nlaitchison.github.io/Bandmate/#/
 
